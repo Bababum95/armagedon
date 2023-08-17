@@ -1,5 +1,5 @@
 # ARMAGEDDON 2023
-Этот проект был сделан как тестовое задание с использованием NEXT TypeScript и NASA API. Ответы бота отображаются посимвольно, так как ответы возвращаются в формате чанков.
+Этот проект был сделан как тестовое задание с использованием NEXT TypeScript и NASA API.
 
 <details>
 <summary>Превью</summary>
@@ -14,6 +14,20 @@
  - NEXT с TypeScript
  - CSS modules
  - NASA API
+
+## Использование
+ - Клонируйте репозиторий
+ ```
+git clone https://github.com/Armaggedon/Armaggedon.git
+```
+ - Установите зависимости
+ ```
+ npm install
+```
+ - Запустите проект
+ ```
+npm run dev
+```
 
 <details>
 <summary>Здание</summary>
