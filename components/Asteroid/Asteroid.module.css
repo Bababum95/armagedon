@@ -1,0 +1,82 @@
+.asteroid {
+    margin-top: 24px;
+}
+
+.date {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.distance {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 10px;
+    background-image: url('/images/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 100%;
+}
+
+.name {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration-line: underline;
+}
+
+.diameter {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.button {
+    color: #F86600;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1px;
+    padding: 2px 11px;
+    border-radius: 16px;
+    background: rgba(248, 102, 0, 0.15);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #F86600;
+    color: #fff;
+}
+
+.dangerous, .safe {
+    margin-left: 10px;
+    color: #E3E5E5;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.dangerous::before {
+    content: '';
+    background-image: url('/images/danger.png');
+    width: 14px;
+    height: 15px;
+    margin-right: 8px;
+    display: inline-block;
+}

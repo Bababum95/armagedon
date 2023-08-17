@@ -1,0 +1,14 @@
+.container {
+    flex: 1;
+    display: flex;
+}
+
+.planet {
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    min-height: calc(100vh - 260px);
+    min-width: calc((100vw - 402px)/2);
+    object-fit: contain;
+    object-position: left;
+}
