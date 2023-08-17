@@ -43,30 +43,35 @@ const Asteroid: FC<AsteroidProps> = ({
     return (
         <li className={styles.asteroid} >
             <Link href={`/${asteroid.id}`} >
-            <p className={styles.date}>{formattedDate(date)}</p>
-            <div className={styles.info}>
-                <p className={styles.distance}>{distance}</p>
-                <Image
-                    src='/images/pngegg.png'
-                    alt='астероид'
-                    width={Math.round(diameter * 1000) > 100 ? 36 : 22}
-                    height={Math.round(diameter * 1000) > 100 ? 40 : 24}
-                />
-                <div>
-                    <h3 className={styles.name}>{formattedName(name)}</h3>
-                    <p className={styles.diameter}>Ø {Math.round(diameter * 1000)} м</p>
+                <p className={styles.date}>{formattedDate(date)}</p>
+                <div className={styles.info}>
+                    <p className={styles.distance}>{distance}</p>
+                    <Image
+                        src='/images/pngegg.png'
+                        alt='астероид'
+                        width={Math.round(diameter * 1000) > 100 ? 36 : 22}
+                        height={Math.round(diameter * 1000) > 100 ? 40 : 24}
+                    />
+                    <div>
+                        <h3 className={styles.name}>{formattedName(name)}</h3>
+                        <p className={styles.diameter}>Ø {Math.round(diameter * 1000)} м</p>
+                    </div>
                 </div>
-            </div>
-            {showButton && (
-                <>
-                    {inCart ? (
-                        <button className={styles.inCart}>В КОРЗИНЕ</button>
-                    ) : (
-                        <button className={styles.button} onClick={() => addToCart(asteroid)}>ЗАКАЗАТЬ</button>
-                    )}
-                </>
-            )}
-            {dangerous && (<span className={styles.dangerous}>Опасен</span>)}
+                {showButton && (
+                    <>
+                        {inCart ? (
+                            <button className={styles.inCart}>В КОРЗИНЕ</button>
+                        ) : (
+                            <button className={styles.button} onClick={(e) => {
+                                e.preventDefault()
+                                addToCart(asteroid)
+                            }}>
+                                ЗАКАЗАТЬ
+                            </button>
+                        )}
+                    </>
+                )}
+                {dangerous && (<span className={styles.dangerous}>Опасен</span>)}
             </Link>
         </li>
     )
