@@ -1,4 +1,3 @@
-'use client';
 import { FC } from 'react'
 import styles from './Asteroid.module.css'
 import Image from 'next/image';
