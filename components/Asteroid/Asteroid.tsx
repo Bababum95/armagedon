@@ -1,5 +1,8 @@
-'use client';
 import { FC } from 'react'
+import Link from 'next/link';
+
+import { INearEarthObject } from '@/interfaces/IAsteroidData';
+import { formattedDate } from '@/utils/formattedDate';
 import styles from './Asteroid.module.css'
 import Image from 'next/image';
 
@@ -7,22 +10,12 @@ interface AsteroidProps {
     name: string;
     diameter: number;
     dangerous: boolean;
+    showButton: boolean;
+    inCart: boolean;
     date: string;
     distance: string;
-}
-
-const formattedKilometers = (distance: string) => {
-    return parseFloat(distance).toLocaleString('en-US', {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-    }).replace(/\,/g, ' ')
-}
-
-const formattedDate = (date: string) => {
-    const parsedDate = new Date(date);
-    return parsedDate.toLocaleDateString('ru-RU', {
-        year: 'numeric', month: 'short', day: 'numeric'
-    }).replace(/\./g, '').slice(0, -1);
+    asteroid: INearEarthObject;
+    addToCart: (asteroid: INearEarthObject) => void;
 }
 
 const formattedName = (name: string) => {
@@ -35,12 +28,24 @@ const formattedName = (name: string) => {
 };
 
 
-const Asteroid: FC<AsteroidProps> = ({ name, diameter, dangerous, date, distance }) => {
+const Asteroid: FC<AsteroidProps> = ({
+    asteroid,
+    inCart,
+    addToCart,
+    showButton,
+    name,
+    diameter,
+    dangerous,
+    date,
+    distance
+}) => {
+
     return (
         <li className={styles.asteroid} >
+            <Link href={`/${asteroid.id}`} >
             <p className={styles.date}>{formattedDate(date)}</p>
             <div className={styles.info}>
-                <p className={styles.distance}>{formattedKilometers(distance)} км</p>
+                <p className={styles.distance}>{distance}</p>
                 <Image
                     src='/images/pngegg.png'
                     alt='астероид'
@@ -52,12 +57,17 @@ const Asteroid: FC<AsteroidProps> = ({ name, diameter, dangerous, date, distance
                     <p className={styles.diameter}>Ø {Math.round(diameter * 1000)} м</p>
                 </div>
             </div>
-            <button className={styles.button}>ЗАКАЗАТЬ</button>
-            {dangerous ? (
-                <span className={styles.dangerous}>Опасен</span>
-            ) : (
-                <span className={styles.safe}>Безопасен</span>
+            {showButton && (
+                <>
+                    {inCart ? (
+                        <button className={styles.inCart}>В КОРЗИНЕ</button>
+                    ) : (
+                        <button className={styles.button} onClick={() => addToCart(asteroid)}>ЗАКАЗАТЬ</button>
+                    )}
+                </>
             )}
+            {dangerous && (<span className={styles.dangerous}>Опасен</span>)}
+            </Link>
         </li>
     )
 }

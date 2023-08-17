@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Passion+One:regular);
 .container {
     padding: 16px;
+    position: relative;
+    z-index: 3;
 }
 
 .title {

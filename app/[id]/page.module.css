@@ -1,0 +1,41 @@
+.title {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+.content {
+    margin-top:16px;
+    max-width:400px;
+    margin: 0 auto;
+}
+
+.param {
+    display: flex;
+    margin-top: 10px;
+}
+
+.label {
+    width: 140px;
+    opacity: 0.8;
+}
+
+.value {
+    font-weight: 700;
+}
+
+.list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.item {
+    margin-top: 20px;
+    border-radius: 24px;
+    background: #232526;
+    padding: 16px;
+}
+@media (max-width: 750px) {
+    .container {
+        margin: 0 24px 0 auto;
+    }
+  }

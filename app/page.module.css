@@ -1,7 +1,49 @@
-.title {
+.container {
+  width: 100%;
   max-width: 402px;
+}
+
+.title {
+  width: 100%;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 36px;
+  margin-bottom: 8px;
+}
+
+.list {
+  list-style: none;
+  width: 100%;
+  max-width: 402px;
+}
+
+.distance {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.distance.active {
+  text-decoration-line: none;
+  font-weight: 700;
+  cursor: auto;
+}
+
+.separator {
+  margin: 0 5px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-width: 750px) {
+  .container {
+    margin: 0 24px 0 auto;
+  }
 }

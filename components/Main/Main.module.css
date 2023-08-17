@@ -1,14 +1,35 @@
 .container {
     flex: 1;
     display: flex;
+    padding-left: calc((100vw - 402px)/2);
 }
 
 .planet {
-    position: sticky;
+    position: fixed;
     top: 50%;
+    left: 0;
     transform: translateY(-50%);
     min-height: calc(100vh - 260px);
     min-width: calc((100vw - 402px)/2);
     object-fit: contain;
     object-position: left;
+}
+
+@media screen and (max-width: 1020px) {
+    .planet {
+        margin-left: calc((100vw - 1020px)/2);
+    }
+}
+@media (max-width: 750px) {
+    .container {
+        padding-left: 85px;
+    }
+    .planet {
+        margin-left: calc((100vw - 980px)/2);
+    }
+}
+@media (max-width: 550px) {
+    .planet {
+        margin-left: -215px;
+    }
 }
