@@ -18,7 +18,7 @@
 ## Использование
  - Клонируйте репозиторий
  ```
-git clone https://github.com/Armaggedon/Armaggedon.git
+git clone git@github.com:Bababum95/armagedon.git
 ```
  - Установите зависимости
  ```
