@@ -1,6 +1,7 @@
+import { format } from 'date-fns';
+import { ru } from 'date-fns/locale';
+
 export const formattedDate = (date: string) => {
     const parsedDate = new Date(date);
-    return parsedDate.toLocaleDateString('ru-RU', {
-        year: 'numeric', month: 'short', day: 'numeric'
-    }).replace(/\./g, '').slice(0, -1);
-}
+    return format(parsedDate, 'dd MMM yyyy', { locale: ru }).replace(/\./g, '');
+};
